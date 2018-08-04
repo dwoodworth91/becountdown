@@ -1,0 +1,154 @@
+html{
+	-webkit-transition: all 800ms ease;
+	transition: all 800ms ease;
+	cursor: pointer;
+}
+body{
+	margin: 0;
+}
+
+.bg{
+	position: fixed; 
+	top: -50%;
+	left: -50%; 
+	width: 200%; 
+	height: 200%;
+	
+	-webkit-transition: left 1s;
+    transition: left 1s;
+	z-index: -1;
+}
+.bg.bg-left{
+	left: -150%; 
+}
+.bg.bg-right{
+	left: 50%; 
+}
+.bg.bg-right, .bg.bg-left{
+	z-index: -2;
+}
+
+.bg img {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	right: 0; 
+	bottom: 0; 
+	margin: auto; 
+	min-width: 50%;
+	min-height: 50%;
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+}
+
+html { font-size: 150%; }
+@media (max-width: 1200px) {html{font-size: 125%;}}
+@media (max-width: 1000px) {html{font-size: 100%;}}
+@media (max-width: 767px) {html{font-size: 80%;}}
+@media (max-width: 568px) {html{font-size: 50%;}}
+@media (max-width: 480px) {html{font-size: 35%;}}
+@media (max-width: 320px) {html{font-size: 25%;}}
+
+.odometer-centerizer{	
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	-webkit-transform: translateZ(0);
+	font-size: 2em;
+}
+.odometer-container
+{
+	text-align: center;
+	position: relative;
+	top: 25%;
+	transform: translateY(-25%);
+}
+.odometer-accent
+{	
+	font-size: 3em;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	line-height: 1em;
+	margin-bottom: -0.1em;
+}
+.odometer-accent:before ,
+.odometer-accent:after{
+	content: " ";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: .05em;
+	background: #000;
+}
+.odometer-accent:after{
+	top: 85%;
+}
+.odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-minimal.odometer-animating-up .odometer-ribbon-inner,
+.odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-minimal.odometer-animating-down.odometer-animating .odometer-ribbon-inner{
+	-webkit-transition: -webkit-transform 500ms !important;
+	-moz-transition: -moz-transform 500ms !important;
+	-ms-transition: -ms-transform 500ms !important;
+	-o-transition: -o-transform 500ms !important;
+	transition: transform 500ms !important;
+}
+.digit:before{
+	font-size: 30%;
+	line-height: 0em;
+	position: absolute;
+	top: -0.8em;
+}
+#days:before{
+	content: "Days";
+	left: 1.5em;
+}
+#hours:before{
+    left: 0.5em;
+	content: "Hours";
+}
+#minutes:before{
+    left: 0;
+	content: "Minutes";
+}
+#seconds:before{
+    left: 0;
+	content: "Seconds";
+}
+
+.spacer{
+	display: inline;
+	font-size: 0%;
+}
+.slide-btn{
+	position: absolute;
+	top: 50%;
+	margin-top: -2em;
+	height: 4em;
+}
+#back-btn{
+	left: 0%;
+}
+#forward-btn{
+	right: 0%;
+}
+.ctrl-btn{
+	display: inline-block;
+	border: 1px solid black;
+	padding: 0.3em;
+	margin-top: 2em;
+	width: 4em;
+}
+.ctrl-btn:hover{
+	background: rgba(0,0,0, 0.5);
+	color: #EEEEEE;
+}
+.btn{
+	opacity: 0;
+}

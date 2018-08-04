@@ -1,0 +1,281 @@
+.digit
+{
+ position:absolute;
+ top:5%;
+ height:90.5%;
+ visibility:hidden
+}
+.digit-1-3
+{
+ left:5.5%;
+}
+.digit-2-3
+{
+ left:37.5%;
+}
+.digit-3-3
+{
+ left:68.5%;
+}
+.digit-1-2
+{
+ left:7.5%;
+}
+.digit-2-2
+{
+ left:54.5%;
+}
+
+.box div
+{
+ height: 100%;
+ width: 100%;
+ background: white;
+ opacity:0.2;
+ border-radius:12px;
+}
+.box h1
+{
+ color: #000000 !important;
+ margin:0;
+ padding:0;
+ position: absolute;
+ z-index: 1;
+ width: 100%;
+ height: 100%;
+ top: -10%;
+ font-size: 3em;
+}
+.box
+{
+ border: 2px solid black;
+ border-radius:12px;
+}
+.tall-box
+{
+ height:18.9%;
+}
+.tall-box img
+{
+ z-index: 1;
+}
+.short-box
+{
+ height:6.7%;
+}
+.days-box
+{
+ position:absolute;
+ top:30.3%;
+ left:3%;
+ width:26.7%;
+}
+.hours-box
+{
+ position:absolute;
+ top:30.3%;
+ left:34.2%;
+ width:18%;
+}
+.minutes-box
+{
+ position:absolute;
+ top:30.3%;
+ left:56.5%;
+ width:18%;
+}
+.seconds-box
+{
+ position:absolute;
+ top:30.3%;
+ left:79%;
+ width:18%;
+}
+.timer-background
+{
+ width: 100%;
+ margin: 0;
+ padding: 0;
+}
+.days-label-box
+{
+ position:absolute;
+ left:3%;
+ top: 22.5%;
+ width:26.7%;
+}
+.hours-label-box
+{
+ position:absolute;
+ left:34.2%;
+ top: 22.5%;
+ width:18%;
+}
+.minutes-label-box
+ {
+ position:absolute;
+ left:56.5%;
+ top: 22.5%;
+ width:18%;
+}
+.seconds-label-box
+ {
+ position:absolute;
+ left:79%;
+ top: 22.5%;
+ width:18%;
+}
+.days-label
+ {
+ position:absolute;
+ top: 27%;
+ width:100%;
+ height:100%
+}
+.hours-label
+ {
+ position:absolute;
+ top: 27%;
+}
+.minutes-label
+ {
+ position:absolute;
+ top: 27%;
+}
+.seconds-label
+ {
+ position:absolute;
+ top: 27%;
+}
+
+.small-box
+{
+ height:8%;
+ top: 2%;
+ width:6%;
+ visibility:hidden;
+ position:absolute;
+}
+.small-box:hover
+{
+ box-shadow: 0 0 1em #000000 inset;
+}
+.small-box:active
+{
+ box-shadow: 0 0 2.5em #000000 inset;
+}
+.forward-box
+ {
+ left:85%;
+}
+.play-box
+ {
+ left:77.5%;
+}
+.backward-box
+ {
+ left:70%;
+}
+.sound-box
+ {
+ left:92.5%;
+}
+
+.icon
+{
+ position:absolute;
+ z-index: 2;
+}
+.forward-icon
+ {
+ width: 88%;
+ left: 6%;
+ top: 6%;
+}
+.play-icon
+ {
+ width: 115%;
+ left: -5%;
+ top: -7%;
+}
+.pause-icon
+ {
+ width: 88%;
+ left: 8%;
+ top: 6%;
+}
+.backward-icon
+ {
+ width: 88%;
+ left: 6%;
+ top: 6%;
+}
+.sound-icon
+ {
+ width: 90%;
+ left: 4%;
+ top: 4%;
+}
+
+/*Special Safari Classes to be applied by JS in Safari to address Safari idiosyncrasies*/
+.digit-1-3-safari
+{
+ left:-8%;
+ width: 53.5%;
+}
+.digit-2-3-safari
+{
+ left:24%;
+ width: 53.5%;
+}
+.digit-3-3-safari
+{
+ left:55%;
+ width: 53.5%;
+}
+.digit-1-2-safari
+{
+ left:-12.75%;
+ width: 80.230%;
+}
+.digit-2-2-safari
+{
+ left:34.25%;
+ width: 80.230%;
+}
+
+.icon-safari
+{
+ position:absolute;
+ z-index: 2;
+}
+.forward-icon-safari
+ {
+ width: 88%;
+ left: 6%;
+ top: -8.5%;
+}
+.pause-icon-safari
+ {
+ width: 88%;
+ left: 8%;
+ top: -8.5%;
+}
+.play-icon-safari
+ {
+ width: 117.5%;
+ left: -4%;
+ top: -8.5%;
+}
+.backward-icon-safari
+ {
+ width: 88%;
+ left: 6%;
+ top: -8.5%;
+}
+.sound-icon-safari
+ {
+ width: 90%;
+ left: 4%;
+ top: -16%;
+}

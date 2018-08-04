@@ -1,0 +1,229 @@
+html
+{
+ min-height: 100%;
+ padding: 0;
+ margin: 0;
+ background: url('images/ncmap.jpg') no-repeat center center fixed; 
+ //-webkit-background-size: cover;
+ //-moz-background-size: cover;
+ //-o-background-size: cover;
+ //background-size: cover;
+ position: relative;
+}
+body
+{
+ padding: 0;
+ margin: 0;
+}
+.title
+{
+ padding-top: 0.5em;
+ padding-bottom: 0;
+}
+.navbar
+{
+ width: 72em;
+ height: 3em;
+ left: -1em;
+ margin: 0 auto;
+ position:relative;
+}
+.navbar:before,.navbar:after 
+{
+ z-index: -1;
+ content:" ";
+ border-top:2em solid #CFCF00;
+ position:absolute;
+ bottom:-2.1em;
+} 
+.navbar:before 
+{
+ border-left:2.5em solid transparent;
+ left:0;
+}
+.navbar:after 
+{
+ border-right:2.5em solid transparent;
+ right:0;
+}
+.navbar ul
+{
+ height: 100%;
+ list-style: none;
+ padding:0;
+ margin:0;
+ background: #E6E600;
+ background: -webkit-linear-gradient(#E6E600, #F0F06A, #E6E600); /* For Safari */
+ background: -o-linear-gradient(#E6E600, #F0F06A, #E6E600); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(#E6E600, #F0F06A, #E6E600); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(#E6E600, #F0F06A, #E6E600); /* Standard syntax */
+ border: 1px solid rgba(128, 128, 128, 0.3);
+ border-right: 1px solid rgba(255, 255, 255, 0.5);
+ box-shadow:0 6px 6px rgba(0,0,0,0.3);
+}
+.navbar li
+{
+ height: 3em;
+ display: inline;
+ margin: 0;
+ padding: 0;
+ font-size:140%;
+ }
+.navbar li a
+{
+ line-height: 2.2em;
+ height: 2.15em;
+ padding: 0;
+ text-decoration:none;
+ color:black;
+ margin: 0;
+ padding-left: 1em;
+ padding-right: 1em;
+ display: inline-block;
+ border-left: 1px solid rgba(255, 255, 255, 0.5);
+ border-right: 1px solid rgba(64, 64, 64, 0.3);
+}
+.navbar li a:visited
+{
+ color:black;
+}
+.navbar  li a:hover, .navbar .current a
+{
+ color:black;
+ background: #CFCF00;
+ background: -webkit-linear-gradient(#CFCF00, #E6E600, #CFCF00); /* For Safari */
+ background: -o-linear-gradient(#CFCF00, #E6E600, #CFCF00); /* For Opera 11.1 to 12.0 */
+ background: -moz-linear-gradient(#CFCF00, #E6E600, #CFCF00); /* For Firefox 3.6 to 15 */
+ background: linear-gradient(#CFCF00, #E6E600, #CFCF00); /* Standard syntax */
+}
+.navbar .current a:after
+{
+ content:'';
+ display:block;
+ position:relative;
+ top: -1px;
+ left:34%;
+ width:0;
+ height:0;
+ border-color: #CFCF00 transparent transparent transparent; /*border color should be same as div div background color*/
+ border-style: solid;
+ border-width: 0.75em;
+}
+#content
+{
+ background: white;
+ width: 70em;
+ margin: 0 auto;
+ margin-bottom: 1em;
+ padding: 0;
+ padding-bottom: 7em;
+ box-shadow: 0 0 10px #000000;
+ position: relative;
+}
+#content h3 
+{
+ color: #330066;
+ font-size: 24px;
+ font-style: normal;
+ line-height: normal;
+ font-weight: bold;
+ font-variant: normal;
+ text-transform: uppercase;
+ text-decoration: underline;
+ background-color: #CCC;
+ text-align: center;
+}
+#content h2
+{
+ color: #000;	font-size: 18px;
+}
+#content ol
+{
+ font-size: 18px;
+}
+#content h1
+{
+ text-align: center;
+ color: #303;
+}
+div.timer-frame
+{
+ margin-top: 2em;
+ padding: 0;
+ position: relative;
+ left: 2%;
+ width: 96%;
+ box-shadow: 0 0 10px #000000;
+ -moz-box-shadow: 0 0 10px #000000;
+ -webkit-box-shadow: 0 0 10px #000000;
+ background: grey;
+}
+.frame
+{
+ margin: 0 auto;
+ padding-top: 2em;
+}
+.vX-frame
+{
+ width: 1000px;
+ height: 750px;
+}
+.v1-frame
+{
+ width: 735px;
+ height: 551px;
+}
+.footer
+ {
+ width: 70em;
+ position:absolute;
+ bottom: 0.6em;
+ height: 4em;
+ text-align:center;
+ box-shadow: 0px -7px 10px -7px #000000;
+ padding-right: 7px;
+ padding-left: 7px;
+ left: -7px;
+ z-index; 150;
+}
+.footer div
+{
+ margin: 0;
+ padding-top: 0.6em;
+ height: 100%;
+ background: #F1F8FF;
+ border: 1px solid rgba(254, 254, 254, 0.8);
+ text-align: center;
+ font: 0.75em "Comic Sans MS", cursive, sans-serif;
+}
+.logo
+{
+ top: 15%;
+ width: 4.4%;
+ position: absolute;
+}
+.html5-logo
+{
+ left: 2%;
+}
+.css3-logo
+{
+ left: 7%;
+}
+.jquery-logo
+{
+ position: absolute;
+ top: -75%;
+ left: 11%;
+ width: 15%;
+}
+.share
+{
+ position: fixed;
+ top:5%;
+ left:0;
+}
+.share img 
+{
+ cursor: pointer;
+}

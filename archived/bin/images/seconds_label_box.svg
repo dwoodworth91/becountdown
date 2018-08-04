@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox = "-1 -1 178 53">
+  <rect rx="10" ry="10" width="176" height="51" style="fill:white; fill-opacity:0.25; stroke:black;  stroke-width:2.0"/>
+<text x="22" y="38" fill="black" font-size = "40">Seconds</text>
+</svg>
