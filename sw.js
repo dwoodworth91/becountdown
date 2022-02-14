@@ -105,10 +105,10 @@ self.addEventListener('activate', function(event) {
       return Promise.all(cacheNames
         .filter(it => {
           const isVersion = it.startsWith(VERSION_KEY_SUFFIX);
-          const notCurrentVersion = !it === versionKey();
+          const notCurrentVersion = it !== versionKey();
           const isStaleVersion = isVersion && notCurrentVersion;
 
-          return isStaleVersion || it === EVENT_TIME_CACHE_NAME;
+          return isStaleVersion && it !== EVENT_TIME_CACHE_NAME;
         })
         .map(it => caches.delete(it))
       );
