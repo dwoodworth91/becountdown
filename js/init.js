@@ -1,9 +1,13 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js', {
+    scope: '/becountdown/'
+  })
+}
+
+
 $(document).ready(function() {
-    var time;
-    $.get("time.php", function(data) {
-      time = data;
-    }).always(function() {
-      time = time || Math.round(new Date() / 1000);
-      run(time);
-    });
+    Promise.all([
+      $.get("time.php"),
+      $.get("event_time.php"),
+    ]).then(([time, eventTime]) => run(time, eventTime));
 });

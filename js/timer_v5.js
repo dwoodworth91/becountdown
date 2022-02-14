@@ -1,4 +1,5 @@
 var currentDate;
+var futureDate;
 var tick;
 var ring;
 var hasRung = 0;
@@ -13,10 +14,11 @@ var hideCtrlsEvt;
 //var futureDate = 1464699600; //Value of May 31, 2016 9:00 a.m. EST or 1:00 p.m. GMT/UTC or 8:00 a.m. CST
 //var futureDate = 1496736000; //Value of June 5, 2017 9:00 a.m. EST or 1:00 p.m. GMT/UTC or 8:00 a.m. CST
 //var futureDate = 1528117200; //Value of June 4, 2018 9:00 a.m. EST or 1:00 p.m. GMT/UTC or 8:00 a.m. CST
-var futureDate = 1559577600; //Value of June 3, 2019 12:00 p.m. EST
+//var futureDate = 1559577600; //Value of June 3, 2019 12:00 p.m. EST
 
-function run(serverTime){
+function run(serverTime, eventTime){
  currentDate = serverTime;
+ futureDate = eventTime;
  var agent = navigator.userAgent.toLowerCase();
  if (agent.indexOf('firefox') > -1){
   tick = new Audio("sounds/tick2.ogg");
@@ -76,11 +78,11 @@ $(document).ready(function(){
 	//Populate element references
 	buttons = $(".btn");
 	muteUnmute = $("#muteUnmute");
-	
+
 	muteUnmute.click(function(){
 		setAudio(!audio);
 	});
-	
+
 	//Initialize digit objects
 	digits = {};
 	$('.digit').each(function(index){
@@ -94,7 +96,7 @@ $(document).ready(function(){
 		});
 		digits[this.getAttribute("id")] = od;
 	});
-	
+
 	$("body").on("mousemove", function(){ //Set up control button show/hide logic
 		if(hideCtrlsEvt) clearTimeout(hideCtrlsEvt);
 		buttons.css({"opacity":"1"});

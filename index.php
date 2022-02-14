@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="page.appcache">
+<html>
 	<head>
 		<title>Banner Elk Countdown Timer</title>
 		<meta charset="UTF-8" />
@@ -17,12 +17,12 @@
 		<div class="bg">
 			<img id="bg-img" src="images/1.jpg" alt="">
 		</div>
-		
+
 		<!-- Begin slide arrows -->
 		<img id="back-btn" src="images/previous.svg" class="btn slide-btn" alt="">
 		<img id="forward-btn" src="images/next.svg" class="btn slide-btn" alt="">
 		<!-- End slide arrows -->
-		
+
 		<div class="odometer-centerizer">
 			<div class="odometer-container">
 				<div class="odometer-accent">
