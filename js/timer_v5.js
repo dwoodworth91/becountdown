@@ -15,6 +15,10 @@ var hideCtrlsEvt;
 //var futureDate = 1496736000; //Value of June 5, 2017 9:00 a.m. EST or 1:00 p.m. GMT/UTC or 8:00 a.m. CST
 //var futureDate = 1528117200; //Value of June 4, 2018 9:00 a.m. EST or 1:00 p.m. GMT/UTC or 8:00 a.m. CST
 //var futureDate = 1559577600; //Value of June 3, 2019 12:00 p.m. EST
+//2020 is missing (timer was not started, or maybe just not restearted after the postponement?) but did take place in July
+// Lines below where never actually used but are provided for archival purposes
+// 2021 did not take place :(
+//var futureDate = 1653933600; //Value of May 30th, 2022 12:00 p.m. EST
 
 function run(serverTime, eventTime){
  currentDate = serverTime;
