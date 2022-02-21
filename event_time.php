@@ -1,4 +1,6 @@
 <?php
 header("Content-Type: text/plain");
-print('1654106400');
+
+require('db_fetch_utils.php');
+print(getEventTime());
 ?>

@@ -1,0 +1,71 @@
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  font-size: 1.5em;
+}
+
+
+.controls {
+  width: 23em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 0.35em;
+  padding: 0.35em;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.controls input[type=password] {
+  font-size: inherit;
+}
+
+input, .event-time-container {
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.submit-wrapper {
+  padding-top: 0.5em;
+  grid-column: 1 / 3;
+  text-align: center;
+}
+
+.submit-wrapper input[type=submit] {
+  text-align: center;
+  font-size: 1em;
+  background: white;
+  font-family: monospace;
+  line-height: 1.8em;
+  padding: 0 1.5em;
+  cursor: pointer;
+}
+
+.event-time-container {
+  font-family: monospace;
+}
+
+.event-time-container .dtp_main {
+  padding: 4px 0 4px 4px;
+}
+
+body .dtp_modal-content {
+  font-family: monospace;
+}
+
+body .dtp_modal-content .dpt_modal-button {
+  box-shadow: none;
+  background: white;
+  border: 1px solid black;
+  color: black;
+}
+
+body .dtp_modal-content .dtp_modal-cell-selected {
+  background: black;
+  color: white;
+}
+
+label {
+  font-family: monospace;
+}

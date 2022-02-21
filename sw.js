@@ -1,9 +1,11 @@
 VERSION = 1.8;
 VERSION_KEY_SUFFIX = 'v_';
 EVENT_TIME_CACHE_NAME = 'eventTime';
+EVENT_TIME_RESOURCE_NAME = 'event_time.php';
+TIME_RESOURCE_NAME = 'time.php';
+CACHED_PAGE_NAMES = ['' /*empty; i.e. root/index*/, 'index.php'];
 
 VERSIONED_ASSET_NAMES = [
-  '/',
   'js/slideshow.js',
   'js/timer_v5.js',
   'js/init.js',
@@ -42,6 +44,11 @@ VERSIONED_ASSET_NAMES = [
   'sounds/tick2.wav'
 ];
 
+const ALL_CACHED_RESOURCE_NAMES = [
+  ...VERSIONED_ASSET_NAMES, EVENT_TIME_RESOURCE_NAME, TIME_RESOURCE_NAME,
+  ...CACHED_PAGE_NAMES
+];
+
 const versionKey = () => `${VERSION_KEY_SUFFIX}${VERSION}`
 
 const fetchOrFake = (event, fakeProvider) =>
@@ -69,8 +76,22 @@ const getNetworkFirst = (event, cacheName) => {
   }));
 };
 
+const getRequestResourceName = request =>
+  request.url.replace(self.registration.scope, '');
+
 const requestedResourceNameEquals = (name, request) =>
-  request.url.replace(request.referrer, '') === name;
+  getRequestResourceName(request) === name;
+
+// Forces SW to butt out if this is not something it has been asked to touch.
+const doIfRequestIsForSomethingWeCareAbout = (event, doStuff) => {
+  const isCachedResource = ALL_CACHED_RESOURCE_NAMES
+    .indexOf(getRequestResourceName(event.request)) > -1;
+  if (isCachedResource) {
+    doStuff();
+  } else {
+    event.respondWith(fetch(event.request));
+  }
+}
 
 self.addEventListener('install', function(event) {
   event.waitUntil(
@@ -81,16 +102,20 @@ self.addEventListener('install', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  if (requestedResourceNameEquals('time.php', event.request)) {
-    fetchOrFake(event, () => {
-      const nowEpochMilliseconds = Math.round(new Date() / 1000);
-      return new Response(nowEpochMilliseconds);
-    })
-  } else if (requestedResourceNameEquals('event_time.php', event.request)) {
-    getNetworkFirst(event, EVENT_TIME_CACHE_NAME)
-  } else {
-    getCacheFirst(event, versionKey())
-  }
+  doIfRequestIsForSomethingWeCareAbout(event, () => {
+    if (requestedResourceNameEquals(TIME_RESOURCE_NAME, event.request)) {
+      fetchOrFake(event, () => {
+        const nowEpochMilliseconds = Math.round(new Date() / 1000);
+        return new Response(nowEpochMilliseconds);
+      })
+    } else if (
+      requestedResourceNameEquals(EVENT_TIME_RESOURCE_NAME, event.request)
+    ) {
+      getNetworkFirst(event, EVENT_TIME_CACHE_NAME)
+    } else {
+      getCacheFirst(event, versionKey())
+    }
+  });
 });
 
 /*
