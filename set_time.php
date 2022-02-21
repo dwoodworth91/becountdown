@@ -56,7 +56,7 @@ if (isset($errorStatusCode)) {
     maybeUpdateEventTime($conn);
     maybeUpdatePassword($conn);
     echo getEventTime($conn);
-  } catch (Exception $e) {
+  } catch (Throwable $t) {
     http_response_code(500);
   }
 }
